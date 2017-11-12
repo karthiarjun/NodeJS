@@ -1,0 +1,17 @@
+{
+  "name": "node-express",
+  "version": "1.0.0",
+  "description": "node express exp",
+  "main": "index.js",
+  "scripts": {
+    "test": "Ex4",
+    "start": "node index"
+  },
+  "author": "Karthik Arjun",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0"
+  }
+}
