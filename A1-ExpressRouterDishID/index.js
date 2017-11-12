@@ -8,10 +8,12 @@ const port = 3000;
 const app = express();
 const dishRouter = require('./router/dishRouter');
 const promoRouter = require('./router/promotion');
+const leaderRouter = require('./router/leader');
 app.use(morgan('dev'));
 app.use(bodyParser.json()); //adding bodyparser to make json response
 app.use('/dishes',dishRouter); //Mount dishRouter
-app.use('/promotion',promoRouter); //Mount dishRouter
+app.use('/promotion',promoRouter); //Mount promoRouter
+app.use('/leader',leaderRouter); //Mount leaderRouter
 app.use(express.static(__dirname+'/public')); //access file from folder
 
 
