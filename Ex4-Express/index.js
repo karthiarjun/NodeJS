@@ -6,16 +6,18 @@ const hostname='localhost';
 const port = 3000;
 
 const app = express();
+const dishRouter = require('./router/dishRouter');
 app.use(morgan('dev'));
 app.use(bodyParser.json()); //adding bodyparser to make json response
-app.all('/dishes',(req, res, next) => {
+app.use('/dishes',dishRouter); //Mount dishRouter
+
+//Dishes move to dishRouter
+/*app.all('/dishes',(req, res, next) => {
 	res.statusCode = 200;
 	res.setHeader('Content-type','text/plain');
 	next();
 }); //Request method
-
-//Dishes
-app.get('/dishes', (req, res, next) => {
+ app.get('/dishes', (req, res, next) => {
 	res.end('Will send dishes to u soon');
 });
 
@@ -30,8 +32,7 @@ app.put('/dishes', (req, res, next) => {
 
 app.delete('/dishes', (req, res, next) => {
 	res.end('Deleting all disches');
-});
-
+}); */
 
 //Dishids
 app.get('/dishes/:dishId', (req, res, next) => {
